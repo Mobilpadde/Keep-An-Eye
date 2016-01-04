@@ -1,0 +1,31 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "Mads Cordes",
+    "longName": "Keep An Eye",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/pc_small.png",
+                "name": "IMAGE_LOGO",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Keep An Eye",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "37418507-0ab7-439a-82df-f3e0fb4adb87",
+    "versionLabel": "0.1",
+    "watchapp": {
+        "watchface": true
+    }
+}
