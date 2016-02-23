@@ -1,15 +1,20 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "JS_BEAUTY": 0,
+        "JS_READY": 0
+    },
     "capabilities": [
-        ""
+        "configurable"
     ],
     "companyName": "Mads Cordes",
+    "enableMultiJS": false,
     "longName": "Keep An Eye",
     "projectType": "native",
     "resources": {
         "media": [
             {
                 "file": "images/pc_small.png",
+                "menuIcon": true,
                 "name": "IMAGE_LOGO",
                 "targetPlatforms": null,
                 "type": "bitmap"
@@ -24,7 +29,7 @@
         "chalk"
     ],
     "uuid": "37418507-0ab7-439a-82df-f3e0fb4adb87",
-    "versionLabel": "0.1",
+    "versionLabel": "0.5",
     "watchapp": {
         "watchface": true
     }

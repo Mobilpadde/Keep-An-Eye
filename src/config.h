@@ -2,7 +2,7 @@
 
 // Let user choose background
 #ifndef BACKGROUND_COLOR
-#define BACKGROUND_COLOR GColorDarkGray
+#define BACKGROUND_COLOR 0x555555
 #endif
 
 #if PBL_PLATFORM_CHALK

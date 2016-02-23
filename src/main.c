@@ -2,6 +2,10 @@
 #include <config.h>
 #include "helper.h"
 
+#ifndef JS_BEAUTY
+#define JS_BEAUTY 0
+#endif
+
 static Window *mainWindow;
 static Layer *scleraLayer, *corneaLayer, *shineLayer, *smileLayer;
 
@@ -22,8 +26,17 @@ static void tickHandler(struct tm *tick, TimeUnits unitsChanged){
 	updateTime();
 }
 
+static void inboxReceivedHandler(DictionaryIterator *iter, void *ctx){
+	Tuple *beautyTuple = dict_find(iter, JS_BEAUTY);
+	
+	if(beautyTuple){
+		window_set_background_color(mainWindow, GColorFromHEX(beautyTuple->value->int32));
+		persist_write_int(BACKGROUND_COLOR, beautyTuple->value->uint32);
+	}
+}
+
 static void mainWindowLoad(Window *window){
-	window_set_background_color(window, BACKGROUND_COLOR);
+	window_set_background_color(window, GColorFromHEX(BACKGROUND_COLOR));
 	
 	Layer *mainLayer = window_get_root_layer(window);
 	
@@ -70,6 +83,9 @@ void init(void) {
 	
 	updateTime();
 	tick_timer_service_subscribe(MINUTE_UNIT, tickHandler);
+	
+	app_message_register_inbox_received(inboxReceivedHandler);
+	app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
 }
 
 void deinit(void) {
